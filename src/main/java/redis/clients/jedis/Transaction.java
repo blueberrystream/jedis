@@ -469,7 +469,7 @@ public class Transaction extends BinaryTransaction {
         return getResponse(BuilderFactory.TUPLE_ZSET);
     }
 
-    public Response<Set<Tuple>> zrangeWithScores(String key, int start, int end) {
+    public Response<Set<Tuple>> zrangeWithScores(String key, long start, long end) {
         client.zrangeWithScores(key, start, end);
         return getResponse(BuilderFactory.TUPLE_ZSET);
     }
