@@ -92,7 +92,7 @@ public class ShardedJedisPipeline extends Queable {
         Client c = getClient(key);
         c.setex(key, seconds, value);
         results.add(new FutureResult(c));
-        return getResponse(BuilderFactory.LONG);        
+        return getResponse(BuilderFactory.LONG);
     }
 
     public Response<Long> decrBy(String key, long integer) {
@@ -242,35 +242,35 @@ public class ShardedJedisPipeline extends Queable {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<List<String>> lrange(String key, int start, int end) {
+    public Response<List<String>> lrange(String key, long start, long end) {
         Client c = getClient(key);
         c.lrange(key, start, end);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.STRING_LIST);
     }
 
-    public Response<String> ltrim(String key, int start, int end) {
+    public Response<String> ltrim(String key, long start, long end) {
         Client c = getClient(key);
         c.ltrim(key, start, end);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.STRING);
     }
 
-    public Response<String> lindex(String key, int index) {
+    public Response<String> lindex(String key, long index) {
         Client c = getClient(key);
         c.lindex(key, index);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.STRING);
     }
 
-    public Response<String> lset(String key, int index, String value) {
+    public Response<String> lset(String key, long index, String value) {
         Client c = getClient(key);
         c.lset(key, index, value);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.STRING);
     }
 
-    public Response<Long> lrem(String key, int count, String value) {
+    public Response<Long> lrem(String key, long count, String value) {
         Client c = getClient(key);
         c.lrem(key, count, value);
         results.add(new FutureResult(c));
@@ -347,7 +347,7 @@ public class ShardedJedisPipeline extends Queable {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<Set<String>> zrange(String key, int start, int end) {
+    public Response<Set<String>> zrange(String key, long start, long end) {
         Client c = getClient(key);
         c.zrange(key, start, end);
         results.add(new FutureResult(c));
@@ -382,21 +382,21 @@ public class ShardedJedisPipeline extends Queable {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<Set<String>> zrevrange(String key, int start, int end) {
+    public Response<Set<String>> zrevrange(String key, long start, long end) {
         Client c = getClient(key);
         c.zrevrange(key, start, end);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.STRING_ZSET);
     }
 
-    public Response<Set<Tuple>> zrangeWithScores(String key, int start, int end) {
+    public Response<Set<Tuple>> zrangeWithScores(String key, long start, long end) {
         Client c = getClient(key);
         c.zrangeWithScores(key, start, end);
         results.add(new FutureResult(c));
         return getResponse(BuilderFactory.TUPLE_ZSET);
     }
 
-    public Response<Set<Tuple>> zrevrangeWithScores(String key, int start, int end) {
+    public Response<Set<Tuple>> zrevrangeWithScores(String key, long start, long end) {
         Client c = getClient(key);
         c.zrevrangeWithScores(key, start, end);
         results.add(new FutureResult(c));
@@ -468,7 +468,7 @@ public class ShardedJedisPipeline extends Queable {
         return getResponse(BuilderFactory.TUPLE_ZSET);
     }
 
-    public Response<Long> zremrangeByRank(String key, int start, int end) {
+    public Response<Long> zremrangeByRank(String key, long start, long end) {
         Client c = getClient(key);
         c.zremrangeByRank(key, start, end);
         results.add(new FutureResult(c));

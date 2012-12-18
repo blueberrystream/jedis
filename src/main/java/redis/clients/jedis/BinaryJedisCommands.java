@@ -73,15 +73,15 @@ public interface BinaryJedisCommands {
 
     Long llen(byte[] key);
 
-    List<byte[]> lrange(byte[] key, int start, int end);
+    List<byte[]> lrange(byte[] key, long start, long end);
 
-    String ltrim(byte[] key, int start, int end);
+    String ltrim(byte[] key, long start, long end);
 
-    byte[] lindex(byte[] key, int index);
+    byte[] lindex(byte[] key, long index);
 
-    String lset(byte[] key, int index, byte[] value);
+    String lset(byte[] key, long index, byte[] value);
 
-    Long lrem(byte[] key, int count, byte[] value);
+    Long lrem(byte[] key, long count, byte[] value);
 
     byte[] lpop(byte[] key);
 
@@ -105,7 +105,7 @@ public interface BinaryJedisCommands {
 
     Long zadd(byte[] key, Map<Double, byte[]> scoreMembers);
 
-    Set<byte[]> zrange(byte[] key, int start, int end);
+    Set<byte[]> zrange(byte[] key, long start, long end);
 
     Long zrem(byte[] key, byte[]... member);
 
@@ -115,11 +115,11 @@ public interface BinaryJedisCommands {
 
     Long zrevrank(byte[] key, byte[] member);
 
-    Set<byte[]> zrevrange(byte[] key, int start, int end);
+    Set<byte[]> zrevrange(byte[] key, long start, long end);
 
-    Set<Tuple> zrangeWithScores(byte[] key, int start, int end);
+    Set<Tuple> zrangeWithScores(byte[] key, long start, long end);
 
-    Set<Tuple> zrevrangeWithScores(byte[] key, int start, int end);
+    Set<Tuple> zrevrangeWithScores(byte[] key, long start, long end);
 
     Long zcard(byte[] key);
 
@@ -168,7 +168,7 @@ public interface BinaryJedisCommands {
     Set<Tuple> zrevrangeByScoreWithScores(byte[] key, byte[] max, byte[] min,
 	    int offset, int count);
 
-    Long zremrangeByRank(byte[] key, int start, int end);
+    Long zremrangeByRank(byte[] key, long start, long end);
 
     Long zremrangeByScore(byte[] key, double start, double end);
 

@@ -160,7 +160,7 @@ public class Transaction extends BinaryTransaction {
         return getResponse(BuilderFactory.STRING_SET);
     }
 
-    public Response<String> lindex(String key, int index) {
+    public Response<String> lindex(String key, long index) {
         client.lindex(key, index);
         return getResponse(BuilderFactory.STRING);
     }
@@ -434,7 +434,7 @@ public class Transaction extends BinaryTransaction {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<Set<String>> zrange(String key, int start, int end) {
+    public Response<Set<String>> zrange(String key, long start, long end) {
         client.zrange(key, start, end);
         return getResponse(BuilderFactory.STRING_ZSET);
     }
@@ -484,7 +484,7 @@ public class Transaction extends BinaryTransaction {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<Long> zremrangeByRank(String key, int start, int end) {
+    public Response<Long> zremrangeByRank(String key, long start, long end) {
         client.zremrangeByRank(key, start, end);
         return getResponse(BuilderFactory.LONG);
     }
@@ -494,13 +494,13 @@ public class Transaction extends BinaryTransaction {
         return getResponse(BuilderFactory.LONG);
     }
 
-    public Response<Set<String>> zrevrange(String key, int start, int end) {
+    public Response<Set<String>> zrevrange(String key, long start, long end) {
         client.zrevrange(key, start, end);
         return getResponse(BuilderFactory.STRING_ZSET);
     }
 
-    public Response<Set<Tuple>> zrevrangeWithScores(String key, int start,
-            int end) {
+    public Response<Set<Tuple>> zrevrangeWithScores(String key, long start,
+            long end) {
         client.zrevrangeWithScores(key, start, end);
         return getResponse(BuilderFactory.TUPLE_ZSET);
     }
